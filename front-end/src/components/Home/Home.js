@@ -88,6 +88,7 @@ const Home = () => {
       <table>
         <thead>
           <tr>
+            <th>sr.no</th>
             {columns &&
               columns.map((item, index) => {
                 return <th key={index}>{item}</th>;

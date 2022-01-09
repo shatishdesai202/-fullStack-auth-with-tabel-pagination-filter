@@ -55,7 +55,7 @@ routes.post("/login", async (req, res) => {
     findUser.password
   );
   if (!validPassword) {
-    return res.status(401).send("Password Is Wrong");
+    return res.status(401).send("username or password are wrong!");
   }
 
   const token = jwt.sign({ _id: findUser._id }, "shatish_desai");
