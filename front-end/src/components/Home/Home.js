@@ -18,21 +18,20 @@ const Home = () => {
   ]);
 
   useEffect(() => {
+    const fetchData = async () => {
+      await fetch("http://localhost:8080/api/mock-data").then(async (resp) => {
+        let json = await resp.json();
+        if (resp.status === 200) {
+          let pageTotal = Math.ceil(json.length / pageSize);
+          setTotalPage(pageTotal);
+          setTableData(json);
+        } else {
+          console.log(resp);
+        }
+      });
+    };
     fetchData();
-  }, []);
-
-  const fetchData = async () => {
-    await fetch("http://localhost:8080/api/mock-data").then(async (resp) => {
-      let json = await resp.json();
-      if (resp.status === 200) {
-        let pageTotal = Math.ceil(json.length / pageSize);
-        setTotalPage(pageTotal);
-        setTableData(json);
-      } else {
-        console.log(resp);
-      }
-    });
-  };
+  }, [pageSize]);
 
   const handlePageChange = (index) => {
     const page = index - 1;
@@ -57,7 +56,7 @@ const Home = () => {
 
   return (
     <div>
-      {/* <div className="container">
+      <div className="container">
         <input
           className="input-box"
           value={inputValue}
@@ -84,7 +83,7 @@ const Home = () => {
               </label>
             ))}
         </div>
-      </div> */}
+      </div>
 
       <table>
         <thead>

@@ -1,10 +1,5 @@
-import { useEffect, useState } from "react";
-import {
-  BrowserRouter as Routers,
-  Routes,
-  Route,
-  Navigate,
-} from "react-router-dom";
+import { useState } from "react";
+import { BrowserRouter as Routers, Routes, Route } from "react-router-dom";
 
 import Header from "./components/Header";
 import Home from "./components/Home/Home";

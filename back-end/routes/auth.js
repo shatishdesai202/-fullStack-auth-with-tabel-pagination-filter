@@ -1,18 +1,12 @@
 const routes = require("express").Router();
-
-const userModel = require("../models/user");
-
-//validation function import
-const { loginValidation } = require("../validationSchema/login");
-const { signupValidation } = require("../validationSchema/signup");
-
-// password Hash
 const bcrypt = require("bcryptjs");
-
-// JsonWebToken
 const jwt = require("jsonwebtoken");
 
+const userModel = require("../models/user");
 const data = require("../data/mock-data");
+
+const { loginValidation } = require("../validationSchema/login");
+const { signupValidation } = require("../validationSchema/signup");
 
 routes.post("/signup", async (req, res) => {
   const { firstName, lastName, email, password } = req.body;
@@ -21,7 +15,6 @@ routes.post("/signup", async (req, res) => {
   if (error) return res.status(400).send(error.details[0].message);
 
   // check email is exist or not
-
   const emailExist = await userModel.findOne({ email: email });
   if (emailExist) {
     return res.status(422).send("user already exist");

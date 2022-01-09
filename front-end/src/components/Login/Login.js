@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { Form, Input, Button, message } from "antd";
 import { Link, useNavigate } from "react-router-dom";
 import "antd/dist/antd.css";
@@ -44,7 +44,7 @@ export const Login = ({ isLogin, setIsLogin }) => {
     if (isAuthenticated()) {
       navigate("/login");
     }
-  }, [isLogin]);
+  }, [isLogin, navigate]);
 
   const onFinish = async (values) => {
     await fetch("http://localhost:8080/api/login", {

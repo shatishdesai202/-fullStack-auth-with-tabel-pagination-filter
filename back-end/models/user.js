@@ -1,5 +1,4 @@
 const mongoose = require("mongoose");
-// const { route } = require('../routes/auth');
 
 const userSchema = new mongoose.Schema({
   firstName: {
