@@ -1,13 +1,15 @@
-# start front-end
+> start front-end
 
-`npm install`
+```
+npm install
+npm start
+```
 
-`npm start`
 
-# start back-end
 
-`npm install`
-
-for dev `npm run dev`
-
-`npm start`
+> start back-end
+```
+npm install
+npm start
+for dev ==> npm run dev
+```
