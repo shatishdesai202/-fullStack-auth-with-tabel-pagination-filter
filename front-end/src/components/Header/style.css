@@ -1,0 +1,48 @@
+header {
+  background-image: linear-gradient(#daf5ff, transparent, #daf5ff);
+  height: 50px;
+}
+
+.header-container {
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+}
+.marquee {
+  color: green;
+  white-space: nowrap;
+  overflow: hidden;
+  box-sizing: border-box;
+  font-weight: 500;
+  width: 100%;
+}
+
+.marquee p {
+  display: inline-block;
+  padding-left: 100%;
+  animation: marquee 15s linear infinite;
+  margin: 0;
+}
+@keyframes marquee {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(-100%, 0);
+  }
+}
+
+.logout-button {
+  background-color: #008cba;
+  border: none;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}

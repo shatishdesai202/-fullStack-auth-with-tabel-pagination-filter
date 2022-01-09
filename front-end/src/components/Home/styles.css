@@ -1,0 +1,51 @@
+td {
+  text-align: center;
+}
+table {
+  width: 100%;
+}
+
+.pagination {
+  display: inline-block;
+}
+
+.pagination-block {
+  color: black;
+  float: left;
+  padding: 8px 16px;
+  text-decoration: none;
+  list-style-type: none;
+}
+
+.pagination-block:hover {
+  background-color: #4caf50;
+  color: white;
+  cursor: pointer;
+}
+
+.active-tab {
+  background-color: #008cba;
+  color: white;
+}
+
+.input-box {
+  border-radius: 10px;
+  margin: 20px;
+}
+
+.container {
+  display: flex;
+}
+
+.search-options {
+  align-items: center;
+  display: flex;
+  gap: 30px;
+  width: 100%;
+}
+
+.error-text {
+  font-size: 15px;
+  font-weight: 500;
+  color: red;
+}
